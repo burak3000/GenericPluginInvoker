@@ -1,0 +1,42 @@
+{
+  "ActionsConfiguration": {
+    "Actions": [
+      {
+        "ActionType": "SamplePlugin.SampleAction",
+        "ActionAssembly": "SamplePlugin.dll",
+        "ActionParametersType": "SamplePlugin.SampleActionParameters",
+        "ActionParametersAssembly": "SamplePlugin.dll",
+        "ActionParameters": {
+          "MessageToShow": "This is the best message to show!"
+        }
+      }
+    ]
+  },
+  "Serilog": {
+    "MinimumLevel": "Information",
+    "Override": {
+      "Microsoft.AspNetCore": "Warning"
+    },
+    "WriteTo": [
+      {
+        "Name": "File",
+        "Args": {
+          "path": "Serilogs\\Logs.json",
+          "formatter": "Serilog.Formatting.Json.JsonFormatter, Serilog"
+        }
+      },
+      {
+        "Name": "Console",
+        "Args": {
+          "outputTemplate": "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} <s:{SourceContext}>{NewLine}{Exception}"
+        }
+      }
+    ],
+    "Enrich": [
+      "FromLogContext",
+      "WithMachineName",
+      "WithProcessId",
+      "WithThreadId"
+    ]
+  }
+}
