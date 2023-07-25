@@ -5,6 +5,10 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericPluginInvoker.ConsoleApp", "GenericPluginInvoker.ConsoleApp\GenericPluginInvoker.ConsoleApp.csproj", "{A057A2B2-5AC6-4E20-8C73-B8A98B13C5D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericPluginInvoker.Core", "GenericPluginInvoker.Core\GenericPluginInvoker.Core.csproj", "{E2A8EE51-7BFA-42B8-9496-2493F41048AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericPluginInvoker.Tests", "GenericPluginInvoker.Tests\GenericPluginInvoker.Tests.csproj", "{76CF2FDC-A196-4160-B023-FA91B39F2BA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A057A2B2-5AC6-4E20-8C73-B8A98B13C5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A057A2B2-5AC6-4E20-8C73-B8A98B13C5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A057A2B2-5AC6-4E20-8C73-B8A98B13C5D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2A8EE51-7BFA-42B8-9496-2493F41048AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2A8EE51-7BFA-42B8-9496-2493F41048AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2A8EE51-7BFA-42B8-9496-2493F41048AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2A8EE51-7BFA-42B8-9496-2493F41048AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76CF2FDC-A196-4160-B023-FA91B39F2BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76CF2FDC-A196-4160-B023-FA91B39F2BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76CF2FDC-A196-4160-B023-FA91B39F2BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76CF2FDC-A196-4160-B023-FA91B39F2BA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
