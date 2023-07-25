@@ -85,6 +85,7 @@ namespace GenericPluginInvoker.Core
         /// <exception cref="ArgumentNullException"></exception>
         public Type[] GetAllTypesFromAssembly(string assemblyPath)
         {
+            assemblyPath = Path.GetFullPath(assemblyPath);
             HashSet<Type> types = new HashSet<Type>();
             if (assemblyPath is null)
             {

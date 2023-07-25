@@ -2,6 +2,6 @@
 {
     public interface IPluginAction
     {
-        public void Perform(IActionParameters parameters);
+        void Perform(IActionParameters parameters);
     }
 }

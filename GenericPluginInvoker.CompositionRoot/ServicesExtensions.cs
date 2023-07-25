@@ -10,7 +10,7 @@ namespace GenericPluginInvoker.CompositionRoot
 {
     public static class ServicesExtensions
     {
-        private static string configName = "actionsConfiguration.json";
+        private static string configName = "appConfig.json";
 
         public static IServiceCollection AddBaseServices(this IServiceCollection services)
         {
@@ -25,7 +25,7 @@ namespace GenericPluginInvoker.CompositionRoot
                 .AddJsonFile(configFullPath)
                 .Build();
 
-            var actionsConfiguration = Options.Create(config.GetSection(ActionsConfiguration.ConfigSectionName).Get<ActionsConfiguration>());
+            var actionsConfiguration = Options.Create(config.GetSection(AppConfig.ConfigSectionName).Get<AppConfig>());
             services.AddSingleton(actionsConfiguration);
 
             var logger = new LoggerConfiguration()
