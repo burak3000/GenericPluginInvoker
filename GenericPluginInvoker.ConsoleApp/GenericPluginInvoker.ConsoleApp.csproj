@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GenericPluginInvoker.CompositionRoot\GenericPluginInvoker.CompositionRoot.csproj" />
+    <ProjectReference Include="..\SamplePlugin\SamplePlugin.csproj" />
   </ItemGroup>
 
 </Project>
