@@ -38,6 +38,7 @@ namespace GenericPluginInvoker.CompositionRoot
                 loggingBuilder.AddSerilog(logger: logger);
             });
             services.AddSingleton<IPluginAction, DefaultInvokerAction>();
+            services.AddSingleton<IReflectionHelper, ReflectionHelper>();
 
             return services;
         }

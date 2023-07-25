@@ -1,9 +1,16 @@
-﻿namespace GenericPluginInvoker.Core
+﻿using Newtonsoft.Json.Linq;
+
+namespace GenericPluginInvoker.Core
 {
     public class ActionsConfiguration
     {
         public const string ConfigSectionName = "ActionsConfiguration";
-        public Action[] Actions { get; set; }
+        public List<Action> Actions { get; set; }
+        public static ActionsConfiguration ReadFromJsonFile(string jsonConfigFileFullPath)
+        {
+            var config = JsonHelper.DeserializeFromString<ActionsConfiguration>(File.ReadAllText(jsonConfigFileFullPath));
+            return config;
+        }
     }
 
     public class Action
@@ -12,11 +19,6 @@
         public string ActionAssembly { get; set; }
         public string ActionParametersType { get; set; }
         public string ActionParametersAssembly { get; set; }
-        public ActionParameters ActionParameters { get; set; }
-    }
-
-    public class ActionParameters
-    {
-        public string MessageToShow { get; set; }
+        public JObject ActionParametersJson { get; set; }
     }
 }
