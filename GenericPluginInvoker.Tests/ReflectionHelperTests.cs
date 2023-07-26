@@ -60,8 +60,8 @@ namespace GenericPluginInvoker.Tests
         public void GetAllTypesFromAssembly_EmptyAssembly_ReturnsTypesFromAppDomainAssemblies()
         {
             IReflectionHelper rh = new ReflectionHelper();
-            var typesInCaller = rh.GetAllTypesFromAssembly("");
-            typesInCaller = rh.GetAllTypesFromAssembly("");
+            var typesInCaller = rh.GetAllTypesFromAssembly(Assembly.GetExecutingAssembly().Location);
+            typesInCaller = rh.GetAllTypesFromAssembly(Assembly.GetExecutingAssembly().Location);
             var aTypeFromThisAssembly = typesInCaller.Where(x => x.FullName.Equals(typeof(DummyActionForTesting).FullName)).FirstOrDefault();
             var anotherTypeFromThisAssembly = typesInCaller.Where(x => x.FullName.Equals(typeof(DummyParams).FullName)).FirstOrDefault();
 
