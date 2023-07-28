@@ -1,0 +1,13 @@
+{
+  "Actions": [
+    {
+      "ActionType": "SamplePlugin.SampleAction",
+      "ActionAssembly": "SamplePlugin.dll",
+      "ActionParametersType": "SamplePlugin.SampleActionParameters",
+      "ActionParametersAssembly": "SamplePlugin.dll",
+      "ActionParametersJson": {
+        "MessageToShow": "This is the best message to show!"
+      }
+    }
+  ]
+}

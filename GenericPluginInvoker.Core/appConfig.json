@@ -1,0 +1,38 @@
+{
+  "AppConfig": { "ActionsConfigurationJsonFilePath": "actionsConfiguration.json" },
+  "Serilog": {
+    "MinimumLevel": "Information",
+    "Override": {
+      "Microsoft.AspNetCore": "Warning"
+    },
+    "WriteTo": [
+      {
+        "Name": "File",
+        "Args": {
+          "path": "Serilogs\\Logs.json",
+          "formatter": "Serilog.Formatting.Json.JsonFormatter, Serilog"
+        }
+      },
+      {
+        "Name": "Console",
+        "Args": {
+          "outputTemplate": "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} <s:{SourceContext}>{NewLine}{Exception}"
+        }
+      }
+    ],
+    "Enrich": [
+      "FromLogContext",
+      "WithMachineName",
+      "WithProcessId",
+      "WithThreadId"
+    ]
+  },
+  "exclude": [
+    "**/bin",
+    "**/bower_components",
+    "**/jspm_packages",
+    "**/node_modules",
+    "**/obj",
+    "**/platforms"
+  ]
+}

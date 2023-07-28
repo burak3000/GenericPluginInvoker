@@ -1,0 +1,13 @@
+{
+  "Actions": [
+    {
+      "ActionType": "GenericPluginInvoker.Tests.DummyActionForTesting",
+      "ActionAssembly": "GenericPluginInvoker.Tests.dll",
+      "ActionParametersType": "GenericPluginInvoker.Tests.DummyParams",
+      "ActionParametersAssembly": "GenericPluginInvoker.Tests.dll",
+      "ActionParametersJson": {
+        "MessageToShow": "This is the best message to show!"
+      }
+    }
+  ]
+}
