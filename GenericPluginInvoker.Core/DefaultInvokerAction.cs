@@ -19,12 +19,11 @@ namespace GenericPluginInvoker.Core
                 ActionsConfiguration.ReadFromJsonFile(_configuration.Value.ActionsConfigurationJsonFilePath);
             foreach (var configItem in config.Actions)
             {
-                IReflectionHelper rh = new ReflectionHelper();
-                IPluginAction pluginAction = rh.CreateInstanceOfTypeFromAssembly<IPluginAction>(configItem.ActionType, configItem.ActionAssembly, null);
+                IPluginAction pluginAction = _reflectionHelper.CreateInstanceOfTypeFromAssembly<IPluginAction>(configItem.ActionType, configItem.ActionAssembly, null);
 
                 string paramsAsJsonStr = configItem.ActionParametersJson.ToString();
                 Type paramsType =
-                    rh.GetConcreteTypeFromAssembly(configItem.ActionParametersType, configItem.ActionParametersAssembly);
+                    _reflectionHelper.GetConcreteTypeFromAssembly(configItem.ActionParametersType, configItem.ActionParametersAssembly);
                 IActionParameters actionParameters = JsonHelper.DeserializeFromString<IActionParameters>(paramsAsJsonStr, paramsType);
 
                 pluginAction.Perform(actionParameters);
