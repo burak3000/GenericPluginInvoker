@@ -1,9 +1,9 @@
 # GenericPluginInvoker
-Most of the time we need a command implementation and its parameters to carry out a task. If we give these in a configuration file we can extend our program much as we want.
+Most of the time we need a command implementation and its parameters to carry out a task. If we give these in a configuration file we can extend our program as much as we want.
 
 In this application we have a configuration file(called actionsConfiguration.json). Get the type of the action we want to execute, get its parameters and get the assemblies that store these types.
 
-All the action types implement `IPluginAction` interface and all the parameter types implement `IActionParameters` interface. Then we pass this parameter to the command implementor's `Perform` method.
+All the action types implement `IPluginAction` interface and all the parameter types implement `IActionParameters` interface. Then we pass this parameter to the command implementor's `Perform` method. Please see [DefaultInvokerAction.cs](https://github.com/burak3000/GenericPluginInvoker/blob/main/GenericPluginInvoker.Core/DefaultInvokerAction.cs "Implementation class that calls the actions in the actionsConfiguration file we have.").
 
 Below you can see a configuration file that includes only one action. Its type is SamplePlugin.SampleAction and it is available at SamplePlugin.dll. To carry out this task it needs SamplePlugin.SampleActionParameters which is available SamplePlugin.dll. 
 
@@ -71,3 +71,5 @@ namespace SamplePlugin
         public string MessageToShow { get; set; }
     }
 }`
+
+
