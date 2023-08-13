@@ -20,7 +20,10 @@ Below you can see a configuration file that includes only one action. Its type i
     }
   ]
 }`
-`
+
+This implementation needs Windows' MessageBox API. If you directly clone the code and run it on a non-Windows machine, it will throw an exception as expected.
+
+```
 using GenericPluginInvoker.Core;
 using System.Runtime.InteropServices;
 
@@ -67,5 +70,4 @@ namespace SamplePlugin
     {
         public string MessageToShow { get; set; }
     }
-}
-`
+}`
